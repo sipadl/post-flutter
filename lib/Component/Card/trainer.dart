@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Pages/Trainer/trainer_screen.dart';
 
 class TrainerPage extends StatelessWidget {
   const TrainerPage({super.key});
@@ -13,28 +14,37 @@ class TrainerPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                children: [
-                  const Text(
-                    'Our Trainers',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+              Text(
+                'Our Trainers',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              Column(
-                children: [
-                  const Text(
-                    'Our Trainers',
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TrainerScreen()),
+                  );
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 8.0),
+                  child: const Text(
+                    'See More',
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 14,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ],
-              )
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 10),
